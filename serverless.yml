@@ -1,0 +1,17 @@
+app: my-first-serverless-hello-api
+org: mmohamm5
+service: my-first-serverless-hello-api
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /hello
+          method: get
